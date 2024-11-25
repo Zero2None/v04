@@ -7,14 +7,14 @@ using namespace vsite::oop::v4;
 int main()
 {
 	unsigned uID;
-	leg_counter countLegs = leg_counter();
+	leg_counter countLegs;
 
 	do  {
 		std::cout << "Unesi broj zivotinje: " << std::endl;
 		std::cin >> uID;
 
 		std::unique_ptr<animal> some_animal = animal_factory(uID);
-		std::cout << countLegs.add_animal(std::move(some_animal)) << std::endl;
+		std::cout << countLegs.add_animal(animal_factory(uID).get()) << std::endl;
 
 	} while (uID != 0);
 

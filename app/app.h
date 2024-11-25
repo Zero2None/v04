@@ -12,33 +12,41 @@ namespace vsite::oop::v4
 		virtual unsigned legs() const=0;
 	};
 
-	class insect : public animal {};
-	class spider : public animal {};
-	class bird : public animal {};
+	class insect : public animal {
+	public:
+		unsigned int legs() const override;
+	};
+	class spider : public animal {
+	public:
+		unsigned int legs() const override;
+	};
+	class bird : public animal {
+	public:
+		unsigned int legs() const override;
+	};
 
 	class cockroach : public insect {
 	public:
 		std::string species() const override;
-		unsigned legs() const override;
+		
 	};
 
 	class tarantula : public spider {
 	public:
 		std::string species() const override;
-		unsigned legs() const override;
+		
 	};
 
 	class sparrow : public bird {
 	public:
 		std::string species() const override;
-		unsigned legs() const override;
+		
 	};
 
 	class leg_counter {
 	public:
-		std::string add_animal(const animal* a); //dodao zbog testa
-		std::string add_animal(std::unique_ptr<animal> a);
-		unsigned legs() const;
+		std::string add_animal(const animal* a);
+			unsigned legs() const;
 		
 	private:
 		unsigned counter=0;
