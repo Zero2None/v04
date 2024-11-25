@@ -12,8 +12,7 @@ int main()
 	do  {
 		std::cout << "Unesi broj zivotinje: " << std::endl;
 		std::cin >> uID;
-
-		std::unique_ptr<animal> some_animal = animal_factory(uID);
+				
 		std::cout << countLegs.add_animal(animal_factory(uID).get()) << std::endl;
 
 	} while (uID != 0);
